@@ -31,25 +31,25 @@ function Person() {
 }
 
 const person = new Person();
-person.sayName();
+// person.sayName();
 
 
 // Arrow function with this keyword
 
-// function Person2() {
-//     this.name = 'Bharat',
-//     this.age = 23,
-//     this.fullName = function() {
-//         console.log(this.name, "Printing name");
-//         const innerFunction = () => {
-//            console.log(this.age, "Accessing this inside arrow function");  
-//            // Here this refers to global object so (this.age) is accesable from global object.
-//         }
-//         return innerFunction();
-//     }
-// }
+function Person2() {
+    this.name = 'Bharat',
+    this.age = 23,
+    this.fullName = function() {
+        console.log(this.name, "Printing name");  // here this represents to parent function
+        const innerFunction = () => {
+           console.log(this.age, "Accessing this inside arrow function");  
+           // Here this refers to global object so (this.age) is accesable from global object(Parent object).
+        }
+        return innerFunction();
+    }
+}
 
-// const restPerson = new Person2();
+const restPerson = new Person2();
 // restPerson.fullName();
 
 
@@ -63,7 +63,7 @@ let people = {
     }
 }
 
-// people.profile();
+people.profile();
 
 
 
