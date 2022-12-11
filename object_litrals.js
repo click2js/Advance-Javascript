@@ -3,8 +3,8 @@ let fname = "GP";
 let age = 25;
 
 let profile = {
-    fname,
-    age
+    fname,  // Instead of fname:fname we can place only fname
+    age     // similarly age:age can be put as age
 }
 
 let people = {
